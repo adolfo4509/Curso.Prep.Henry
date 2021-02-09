@@ -8,20 +8,20 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-  function Usuario(opciones) {
-
+ class Usuario {
+constructor(opciones){
     
     this.usuario = opciones.usuario;
     this.nombre = opciones.nombre;
     this.email = opciones.email;
     this.password = opciones.password;
+}
+  saludar(){
     
+    return `Hola, mi nombre es ${this.nombre}`;
+      }
   }
-  Usuario.prototype.saludar = function(){
-    return 'Hola, mi nombre es ' + this.nombre;
-};
-return Usuario;
-
+     return Usuario;
 }
 
 function agregarMetodoPrototype(Constructor) {
@@ -41,12 +41,12 @@ function agregarStringInvertida() {
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
   String.prototype.reverse = function () {
-    var stringInvertida = '';
-    for(var i = this.length - 1; i >= 0; i--) {
-      stringInvertida = stringInvertida + this.charAt(i);
+    var stringInvertida = [];
+    for(let i = this.length ; i >= 0; i++) {
+      stringInvertida.unshift(this[i]);
     }
     
-return stringInvertida;
+return stringInvertida.join('');
 }
 }
 
@@ -74,8 +74,8 @@ return stringInvertida;
         Apellido: this.apellido,
         Edad: this.edad,
         Domicilio: this.domicilio
-        }
-     }
+        };
+     };
    }
 }
 
